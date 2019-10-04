@@ -11,7 +11,7 @@ import { UserService } from '../../services/user-service/user.service';
 
 export class SignUpFormComponent implements OnInit {
 
-  private signUpForm: FormGroup;
+  public signUpForm: FormGroup;
   customMonthNames = "Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Set, Oct, Nov, Dic"
   datePickerOptions: any;
   userRoleSelectOptions: any

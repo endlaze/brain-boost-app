@@ -8,7 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { StockRolesService } from './services/stock-roles/stock-roles.service'
+import { StockRolesService } from './services/stock-roles/stock-roles.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +21,8 @@ import { StockRolesService } from './services/stock-roles/stock-roles.service'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule],
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [
     StatusBar,
     SplashScreen,
