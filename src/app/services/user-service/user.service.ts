@@ -8,10 +8,15 @@ import { environment } from '../../../environments/environment';
 
 export class UserService {
   private stockTypesUrl = environment.apiUrl + '/api/app_user'
+  private personalInformationURL = environment.apiUrl + '/api/personalData'
 
   constructor(private http: HttpClient) { }
 
   public create = (user) => {
     return this.http.post(this.stockTypesUrl + '/create', user)
+  }
+
+  public getNames = (id) => {
+    return this.http.post(this.personalInformationURL, id)
   }
 }

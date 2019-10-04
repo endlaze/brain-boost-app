@@ -112,4 +112,19 @@ export class SignUpFormComponent implements OnInit {
       }
     });
   }
+
+  checkId = (id) => {
+    id = id.detail.value
+    if (id.length === 9) {
+      this.getUserInformation(id)
+    }
+  }
+
+  getUserInformation = (id) => {
+    this.userService.getNames({ id: id }).subscribe((res: any) => {
+      let { name, first_last_name, second_last_name } = res
+      this.signUpForm.patchValue({name: name, first_last_name: first_last_name, second_last_name: second_last_name})
+    })
+  }
+  
 }

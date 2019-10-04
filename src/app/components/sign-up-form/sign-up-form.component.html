@@ -4,6 +4,10 @@
       <ion-card-subtitle color="light">Información personal</ion-card-subtitle>
     </ion-card-header>
     <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Identificación</ion-label>
+      <ion-input type="number" formControlName="id" placeholder="Solo digite números" (ionChange)="checkId($event)"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
       <ion-label class="card-label" position="stacked">Nombre</ion-label>
       <ion-input type="text" formControlName="name" placeholder="Solo digite letras"></ion-input>
     </ion-item>
@@ -14,10 +18,6 @@
     <ion-item lines="full">
       <ion-label class="card-label" position="stacked">Segundo apellido</ion-label>
       <ion-input type="text" formControlName="second_last_name" placeholder="Solo digite letras"></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label class="card-label" position="stacked">Identificación</ion-label>
-      <ion-input type="number" formControlName="id" placeholder="Solo digite números"></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label class="card-label" position="stacked">Fecha de nacimiento</ion-label>
