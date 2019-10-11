@@ -2,7 +2,7 @@
   <ion-menu type="overlay">
     <ion-header>
       <ion-toolbar>
-        <ion-title text-center>Menú</ion-title>
+        <ion-title class="ion-text-center">Menú</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
@@ -15,6 +15,10 @@
             </ion-label>
           </ion-item>
         </ion-menu-toggle>
+        <ion-item (click)="logout()">
+          <ion-icon slot="start" [name]="'exit'"></ion-icon>
+          <ion-label>Cerrar Sesión</ion-label>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
