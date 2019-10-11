@@ -15,7 +15,7 @@ import { AuthGuard } from '../../guard/auth-guard'
 
 export class LoginFormComponent implements OnInit {
 
-  private loginForm: FormGroup;
+  loginForm: FormGroup;
   emailRegExp = new RegExp(EMAIL_REGEXP);
   idRegExp = new RegExp(CR_ID_REGEXP);
 
