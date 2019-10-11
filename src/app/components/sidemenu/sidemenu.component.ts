@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthGuard } from '../../guard/auth-guard'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidemenu',
@@ -43,16 +45,15 @@ export class SidemenuComponent implements OnInit {
       title: 'Ajustes',
       url: '/settings',
       icon: 'cog'
-    },
-    {
-      title: 'Cerrar Sesión',
-      url: '/exit',
-      icon: 'exit'
     }
   ];
 
-  constructor() { }
+  constructor(private guard: AuthGuard, private router: Router) { }
 
   ngOnInit() { }
 
+  logout = () => {
+    this.guard.logout()
+    this.router.navigate(['/login']);
+  }
 }
