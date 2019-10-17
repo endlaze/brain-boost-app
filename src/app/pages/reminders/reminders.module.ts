@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { RemindersPage } from './reminders.page';
 import { SidemenuComponent } from '../../components/sidemenu/sidemenu.component'
+import { AddReminderComponent } from '../../components/add-reminder/add-reminder.component'
 
 const routes: Routes = [
   {
@@ -22,6 +23,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RemindersPage]
+  declarations: [RemindersPage, AddReminderComponent]
 })
-export class RemindersPageModule {}
+export class RemindersPageModule { }

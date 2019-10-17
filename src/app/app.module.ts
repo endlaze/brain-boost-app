@@ -12,10 +12,12 @@ import { StockRolesService } from './services/stock-roles/stock-roles.service'
 import { IonicStorageModule } from '@ionic/storage';
 import { AuthGuard } from './guard/auth-guard'
 import { LockerModule } from 'angular-safeguard';
+import {AddReminderComponent} from './components/add-reminder/add-reminder.component'
+import {RemindersPageModule} from './pages/reminders/reminders.module'
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [AddReminderComponent],
   imports: [
     LockerModule,
     BrowserModule,
@@ -24,7 +26,8 @@ import { LockerModule } from 'angular-safeguard';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    IonicStorageModule.forRoot()],
+    IonicStorageModule.forRoot(),
+    RemindersPageModule],
   providers: [
     StatusBar,
     SplashScreen,

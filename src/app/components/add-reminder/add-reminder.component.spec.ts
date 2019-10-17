@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RemindersConfigPage } from './reminders-config.page';
+import { AddReminderComponent } from './add-reminder.component';
 
-describe('RemindersConfigPage', () => {
-  let component: RemindersConfigPage;
-  let fixture: ComponentFixture<RemindersConfigPage>;
+describe('AddReminderComponent', () => {
+  let component: AddReminderComponent;
+  let fixture: ComponentFixture<AddReminderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RemindersConfigPage ],
+      declarations: [ AddReminderComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RemindersConfigPage);
+    fixture = TestBed.createComponent(AddReminderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
