@@ -12,6 +12,8 @@ import { StockRolesService } from './services/stock-roles/stock-roles.service'
 import { IonicStorageModule } from '@ionic/storage';
 import { AuthGuard } from './guard/auth-guard'
 import { LockerModule } from 'angular-safeguard';
+import { GoogleMaps } from '@ionic-native/google-maps/ngx'
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +30,8 @@ import { LockerModule } from 'angular-safeguard';
   providers: [
     StatusBar,
     SplashScreen,
+    GoogleMaps,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StockRolesService,
     AuthGuard

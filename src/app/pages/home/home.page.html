@@ -1,9 +1,37 @@
 <app-sidemenu></app-sidemenu>
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">BrainBoost</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">BrainBoost</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ultimos recordatios</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-button color="danger" slot="end">Estoy perdido</ion-button>
+      </ion-item>
+
+      <ion-card-content class="map-wrapper">
+        <app-map></app-map>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+
+</div>
