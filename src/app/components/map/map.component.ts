@@ -10,22 +10,51 @@ import {
   Marker,
   Environment
 } from '@ionic-native/google-maps/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit{
-
+  watch: any;
   map: GoogleMap;
-  constructor(private platform: Platform) { }
+  lat = 0.0;
+  long = 0.0;
+
+  constructor(private platform: Platform, private geolocation: Geolocation) { }
 
   async ngOnInit() {
     await this.platform.ready();
     await this.loadMap();
+    this.watch = this.geolocation.watchPosition();
+    this.watch.subscribe((data) => {
+      this.lat = data.coords.latitude
+      this.long = data.coords.longitude
+      this.onPositionChange()
+      
+    });
   }
 
-  loadMap() {
+  onPositionChange = () => {
+    this.map.moveCamera({
+      target: {lat: this.lat, lng: this.long},
+      zoom: 17,
+      tilt: 60,
+    }).then(() => {
+      let marker: Marker = this.map.addMarkerSync({
+        title: 'Posicion actual',
+        icon: 'blue',
+        position: {
+          lat: this.lat,
+          lng: this.long
+        }
+      });
+    });
+  }
+
+  loadMap = () => {
 
     // This code is necessary for browser
     Environment.setEnv({
@@ -36,8 +65,8 @@ export class MapComponent implements OnInit{
     let mapOptions: GoogleMapOptions = {
       camera: {
          target: {
-           lat: 43.0741904,
-           lng: -89.3809802
+           lat: this.lat,
+           lng: this.long,
          },
          zoom: 18,
          tilt: 30
@@ -46,17 +75,5 @@ export class MapComponent implements OnInit{
 
     this.map = GoogleMaps.create('map_canvas', mapOptions);
 
-    let marker: Marker = this.map.addMarkerSync({
-      title: 'Ionic',
-      icon: 'blue',
-      animation: 'DROP',
-      position: {
-        lat: 43.0741904,
-        lng: -89.3809802
-      }
-    });
-    marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-      alert('clicked');
-    });
   }
 }

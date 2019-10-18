@@ -13,6 +13,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { AuthGuard } from './guard/auth-guard'
 import { LockerModule } from 'angular-safeguard';
 import { GoogleMaps } from '@ionic-native/google-maps/ngx'
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { GoogleMaps } from '@ionic-native/google-maps/ngx'
     StatusBar,
     SplashScreen,
     GoogleMaps,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StockRolesService,
     AuthGuard
