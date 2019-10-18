@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { SidemenuComponent } from '../../components/sidemenu/sidemenu.component'
+import { MapComponent } from '../../components/map/map.component'
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { SidemenuComponent } from '../../components/sidemenu/sidemenu.component'
       }
     ])
   ],
-  declarations: [HomePage, SidemenuComponent]
+  declarations: [HomePage, SidemenuComponent, MapComponent]
 })
 export class HomePageModule { }
