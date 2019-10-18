@@ -14,6 +14,8 @@ import { AuthGuard } from './guard/auth-guard'
 import { LockerModule } from 'angular-safeguard';
 import {AddReminderComponent} from './components/add-reminder/add-reminder.component'
 import {RemindersPageModule} from './pages/reminders/reminders.module'
+import { GoogleMaps } from '@ionic-native/google-maps/ngx'
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +33,8 @@ import {RemindersPageModule} from './pages/reminders/reminders.module'
   providers: [
     StatusBar,
     SplashScreen,
+    GoogleMaps,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StockRolesService,
     AuthGuard
