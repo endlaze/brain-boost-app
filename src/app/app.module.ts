@@ -16,7 +16,7 @@ import {AddReminderComponent} from './components/add-reminder/add-reminder.compo
 import {RemindersPageModule} from './pages/reminders/reminders.module'
 import { GoogleMaps } from '@ionic-native/google-maps/ngx'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-
+import { HomePageModule } from './pages/home/home.module'
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [AddReminderComponent],
@@ -29,7 +29,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     ReactiveFormsModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    RemindersPageModule],
+    RemindersPageModule,
+    HomePageModule],
   providers: [
     StatusBar,
     SplashScreen,

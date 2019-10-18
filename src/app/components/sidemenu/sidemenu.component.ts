@@ -11,6 +11,11 @@ export class SidemenuComponent implements OnInit {
 
   public appPages = [
     {
+      title: 'Inicio',
+      url: '/home',
+      icon: 'home'
+    },
+    {
       title: 'Recordatorios',
       url: '/reminders',
       icon: 'ios-calendar'

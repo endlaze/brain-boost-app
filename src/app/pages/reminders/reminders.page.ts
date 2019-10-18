@@ -50,8 +50,9 @@ export class RemindersPage implements OnInit {
           newRems.push(reminder)
         }
       });
-      this.storage.set('reminders', newRems)
-      this.updateReminders();
+      this.storage.set('reminders', newRems).then(() => {
+        this.updateReminders();
+      })
     });
   }
 

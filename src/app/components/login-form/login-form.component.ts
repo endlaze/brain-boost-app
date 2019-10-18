@@ -49,6 +49,7 @@ export class LoginFormComponent implements OnInit {
     if (res.status === 200) {
       this.guard.setSession(res.token);
       this.storage.set('current-user-id', res.user.user_id);
+      this.storage.set('reminder-count', 1)
       this.storage.set('reminders', [{
         rem_id: 1,
         rem_title: 'Regar el jardín',
@@ -71,7 +72,7 @@ export class LoginFormComponent implements OnInit {
 
     this.toastController.create({
       message: message,
-      duration: 1200,
+      duration: 2000,
       color: toastColor,
       closeButtonText: 'Cerrar',
       showCloseButton: true
