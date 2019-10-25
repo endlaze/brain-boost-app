@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component'
+import { MedicalNoteListComponent } from './components/medical-note-list/medical-note-list.component';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 

@@ -7,7 +7,9 @@ const routes: Routes = [
   { path: 'home', canActivate: [AuthGuard], loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule) },
   { path: 'signup', loadChildren: () => import('./pages/sign-up/sign-up.module').then(s => s.SignUpPageModule) },
   { path: 'reminders', canActivate: [AuthGuard], loadChildren: () => import('./pages/reminders/reminders.module').then(r => r.RemindersPageModule) },
-  { path: 'login', loadChildren: () => import('./pages/login/login.module').then(l => l.LoginPageModule) }
+  { path: 'login', loadChildren: () => import('./pages/login/login.module').then(l => l.LoginPageModule) },
+  { path: 'add-medical-notes', loadChildren: './pages/add-medical-notes/add-medical-notes.module#AddMedicalNotesPageModule' },
+  { path: 'medical-notes', loadChildren: './pages/medical-notes/medical-notes.module#MedicalNotesPageModule' },
 ];
 
 @NgModule({

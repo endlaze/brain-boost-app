@@ -1,0 +1,39 @@
+<app-sidemenu></app-sidemenu>
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">Notas Médicas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <!-- fab placed in the bottom center of the content with a list on each side -->
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="openMedicalNoteModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-justify-content-center bottom-border" nowrap *ngFor="let medicalNote of medicalNotes">
+        <ion-col size="0.1" class="ion-align-self-center pl">
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label>
+              <h3 class="medicalNote-title">{{medicalNote.medNote_title}}</h3>
+              <p class="ion-text-wrap medicalNote-desc"><span class="bold">Descripción: </span> {{medicalNote.medNote_desc}} </p>
+              <p class="medicalNote-patient"><span class="bold">Paciente: </span>{{medicalNote.medNote_patient}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col class="ion-align-self-center" size="1.5">
+          <ion-icon class="icon-color" name="create" size="large"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

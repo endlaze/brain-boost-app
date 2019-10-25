@@ -37,7 +37,12 @@ export class SidemenuComponent implements OnInit {
     },
     {
       title: 'Notas Médicas',
-      url: '/medical_notes',
+      url: '/medical-notes',
+      icon: 'create'
+    },
+    {
+      title: 'Agregar Notas Médicas',
+      url: '/add-medical-notes',
       icon: 'create'
     },
     {

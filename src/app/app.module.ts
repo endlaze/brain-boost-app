@@ -14,12 +14,14 @@ import { AuthGuard } from './guard/auth-guard'
 import { LockerModule } from 'angular-safeguard';
 import {AddReminderComponent} from './components/add-reminder/add-reminder.component'
 import {RemindersPageModule} from './pages/reminders/reminders.module'
+import {AddMedicalNoteComponent} from './components/add-medical-note/add-medical-note.component'
+import {AddMedicalNotesPageModule} from './pages/add-medical-notes/add-medical-notes.module'
 import { GoogleMaps } from '@ionic-native/google-maps/ngx'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { HomePageModule } from './pages/home/home.module'
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [AddReminderComponent],
+  entryComponents: [AddReminderComponent, AddMedicalNoteComponent],
   imports: [
     LockerModule,
     BrowserModule,
@@ -30,6 +32,7 @@ import { HomePageModule } from './pages/home/home.module'
     HttpClientModule,
     IonicStorageModule.forRoot(),
     RemindersPageModule,
+    AddMedicalNotesPageModule,
     HomePageModule],
   providers: [
     StatusBar,

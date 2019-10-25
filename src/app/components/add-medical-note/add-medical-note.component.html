@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Agregar Nota Médica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked" class="font-label font-size-1">Título</ion-label>
+    <ion-input placeholder="Ingrese el título de la nota médica" [(ngModel)]="medicalNoteTitle"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked" class="font-label font-size-1">Descripción</ion-label>
+    <ion-textarea placeholder="Ingrese la descripción" [(ngModel)]="medicalNoteDesc"></ion-textarea>
+  </ion-item>
+
+
+    <ion-item>
+      <ion-label position="stacked" class="font-label font-size-1">Seleccione el paciente</ion-label>
+      <ion-select placeholder="Paciente" [(ngModel)]="medicalNotePatient">
+        <ion-select-option value="patient">Ronulfo León Gamboa</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+</ion-content>
+
+<ion-footer>
+  <ion-grid class="no-padding-bot">
+    <ion-row class="no-padding-bot ">
+      <ion-col class="no-padding-bot ">
+        <ion-button expand="block" class="submit-button" color="danger" (click)="closeModal()">Cancelar</ion-button>
+      </ion-col>
+      <ion-col class="no-padding-bot ">
+        <ion-button expand="block" class="submit-button blue-component" (click)="saveMedicalNote()">Agregar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
