@@ -19,4 +19,12 @@ export class UserService {
   public getNames = (id) => {
     return this.http.post(this.personalInformationURL, id)
   }
+
+  public getRoles = (id) => {
+    return this.http.post(this.stockTypesUrl + '/roles', id)
+  }
+
+  public getInfo = (id) => {
+    return this.http.post(this.stockTypesUrl + '/get_info', id)
+  }
 }
