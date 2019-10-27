@@ -1,16 +1,28 @@
-import { Component } from '@angular/core';
-import { UserService } from '../../services/user-service/user.service'
+import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage'
+import { UserService } from '../../services/user-service/user.service'
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
+  lastReminder = {
+    rem_id: '',
+      rem_title: '',
+      rem_desc: '',
+      rem_date: '',
+      rem_time: ''
+  }
   constructor(private storage: Storage, private userService: UserService) {
+    this.storage.get('reminders').then(reminder => {
+      this.lastReminder = reminder.pop();
+    })
+  }
 
+  ngOnInit = () => {
     this.storage.get('current-user-id').then(userId => {
       this.getUserRoles(userId)
       this.getUserInfo(userId)

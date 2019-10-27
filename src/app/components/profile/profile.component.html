@@ -61,8 +61,7 @@
   <ion-item lines="full">
     <ion-label class="prof-font-size grid-label">
       <span class="prof-label">
-        <ion-icon name="contact" class="label-blue-icon"></ion-icon>
-        Rol principal
+        <ion-icon name="contact" class="label-blue-icon"></ion-icon>Rol principal
       </span>
       <span class="ion-text-wrap caption-padding capt-top-padding">{{userRole.role_desc}}</span>
     </ion-label>
@@ -70,8 +69,7 @@
   <ion-item lines="full" *ngIf="userRole.role_id !== 1">
     <ion-label class="prof-font-size grid-label">
       <span class="prof-label">
-        <ion-icon name="contacts" class="label-blue-icon"></ion-icon>
-        Roles secundarios
+        <ion-icon name="contacts" class="label-blue-icon"></ion-icon>Roles secundarios
       </span>
       <span class="ion-text-wrap caption-padding capt-top-padding" *ngFor="let subrole of userSubroles">
         - {{subrole.subrole_desc}}

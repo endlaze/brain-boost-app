@@ -5,9 +5,10 @@ import { AuthGuard } from './guard/auth-guard'
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', canActivate: [AuthGuard], loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule) },
-  { path: 'signup', loadChildren: () => import('./pages/sign-up/sign-up.module').then(r => r.SignUpPageModule) },
+  { path: 'signup', loadChildren: () => import('./pages/sign-up/sign-up.module').then(s => s.SignUpPageModule) },
+  { path: 'reminders', canActivate: [AuthGuard], loadChildren: () => import('./pages/reminders/reminders.module').then(r => r.RemindersPageModule) },
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(l => l.LoginPageModule) },
-  { path: 'profile', loadChildren: () => import('./pages/user-profile/user-profile.module').then(up => up.UserProfilePageModule) }
+  { path: 'profile', canActivate: [AuthGuard], loadChildren: () => import('./pages/user-profile/user-profile.module').then(up => up.UserProfilePageModule) }
 ];
 
 @NgModule({

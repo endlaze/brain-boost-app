@@ -12,12 +12,14 @@ import { StockRolesService } from './services/stock-roles/stock-roles.service'
 import { IonicStorageModule } from '@ionic/storage';
 import { AuthGuard } from './guard/auth-guard'
 import { LockerModule } from 'angular-safeguard';
+import {AddReminderComponent} from './components/add-reminder/add-reminder.component'
+import {RemindersPageModule} from './pages/reminders/reminders.module'
 import { GoogleMaps } from '@ionic-native/google-maps/ngx'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-
+import { HomePageModule } from './pages/home/home.module'
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [AddReminderComponent],
   imports: [
     LockerModule,
     BrowserModule,
@@ -26,7 +28,9 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    IonicStorageModule.forRoot()],
+    IonicStorageModule.forRoot(),
+    RemindersPageModule,
+    HomePageModule],
   providers: [
     StatusBar,
     SplashScreen,

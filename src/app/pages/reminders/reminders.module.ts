@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { ProfileComponent } from '../../components/profile/profile.component'
+import { SharedModule } from '../../shared.module'
+
 import { IonicModule } from '@ionic/angular';
-import { UserProfilePage } from './user-profile.page';
-import { SharedModule } from '../../shared.module';
+
+import { RemindersPage } from './reminders.page';
+import { AddReminderComponent } from '../../components/add-reminder/add-reminder.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: UserProfilePage
+    component: RemindersPage
   }
 ];
 
@@ -22,6 +24,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule
   ],
-  declarations: [UserProfilePage, ProfileComponent]
+  declarations: [RemindersPage, AddReminderComponent]
 })
-export class UserProfilePageModule { }
+export class RemindersPageModule { }
