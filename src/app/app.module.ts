@@ -17,9 +17,11 @@ import {RemindersPageModule} from './pages/reminders/reminders.module'
 import { GoogleMaps } from '@ionic-native/google-maps/ngx'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { HomePageModule } from './pages/home/home.module'
+import { AddRelatedAccountComponent} from './components/add-related-account/add-related-account.component'
+
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [AddReminderComponent],
+  declarations: [AppComponent, AddRelatedAccountComponent],
+  entryComponents: [AddReminderComponent, AddRelatedAccountComponent],
   imports: [
     LockerModule,
     BrowserModule,

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { EMAIL_REGEXP, CR_ID_REGEXP } from '../../../const/constants';
+import { EMAIL_REGEXP, CR_ID_REGEXP } from '../../../const/regexp.constants';
 import { AuthService } from '../../services/auth-service/auth.service'
 import { Storage } from '@ionic/storage'
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { AuthGuard } from '../../guard/auth-guard'
+import { UserService } from '../../services/user-service/user.service'
 
 @Component({
   selector: 'app-login-form',
@@ -24,7 +25,8 @@ export class LoginFormComponent implements OnInit {
     private storage: Storage,
     private router: Router,
     public toastController: ToastController,
-    private guard: AuthGuard
+    private guard: AuthGuard,
+    private userService: UserService
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -49,6 +51,7 @@ export class LoginFormComponent implements OnInit {
     if (res.status === 200) {
       this.guard.setSession(res.token);
       this.storage.set('current-user-id', res.user.user_id);
+      this.getUserRoles(res.user.user_id);
       this.storage.set('reminder-count', 1)
       this.storage.set('reminders', [{
         rem_id: 1,
@@ -82,4 +85,10 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  getUserRoles = (id) => {
+    this.userService.getRoles({ user_id: id }).subscribe((res: any) => {
+      this.storage.set('user_roles', res.response);
+    }, err => { console.log(err) });
+  }
 }
