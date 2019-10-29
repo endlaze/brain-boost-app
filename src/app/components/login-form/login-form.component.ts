@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage'
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { AuthGuard } from '../../guard/auth-guard'
+import { UserService } from '../../services/user-service/user.service'
 
 @Component({
   selector: 'app-login-form',
@@ -24,7 +25,8 @@ export class LoginFormComponent implements OnInit {
     private storage: Storage,
     private router: Router,
     public toastController: ToastController,
-    private guard: AuthGuard
+    private guard: AuthGuard,
+    private userService: UserService
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
