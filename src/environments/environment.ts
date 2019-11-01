@@ -5,7 +5,16 @@
 export const environment = {
   production: false,
   // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://brain-boost-backend.herokuapp.com'
+  apiUrl: 'https://brain-boost-backend.herokuapp.com',
+  firebase: {
+    apiKey: "AIzaSyAa-hzfcGqc8l1sdFWQp7j-b0b24BkK-fM",
+    authDomain: "brain-boost-d6714.firebaseapp.com",
+    databaseURL: "https://brain-boost-d6714.firebaseio.com",
+    projectId: "brain-boost-d6714",
+    storageBucket: "brain-boost-d6714.appspot.com",
+    messagingSenderId: "517962038747",
+    appId: "1:517962038747:web:2bb2306697d79f5a697bfe"
+  }
 };
 
 /*
