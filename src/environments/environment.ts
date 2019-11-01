@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000'
-  // apiUrl: 'https://brain-boost-backend.herokuapp.com'
+  apiUrl: 'https://brain-boost-backend.herokuapp.com'
 };
 
 /*
