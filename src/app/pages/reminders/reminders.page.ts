@@ -13,7 +13,6 @@ export class RemindersPage implements OnInit {
 
   constructor(public modalController: ModalController, private storage: Storage) {
     this.updateReminders();
-
   }
 
   ngOnInit() {
@@ -30,8 +29,6 @@ export class RemindersPage implements OnInit {
           this.updateReminders();
         });
     });
-
-
   }
 
   updateReminders = () => {
