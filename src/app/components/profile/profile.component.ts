@@ -7,9 +7,9 @@ import { Storage } from '@ionic/storage'
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  userInfo = {}
-  userRole = {}
-  userSubroles = []
+  userInfo:any = {}
+  userRole:any = {}
+  userSubroles:any = []
 
   constructor(private storage: Storage) {
   }

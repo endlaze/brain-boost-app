@@ -12,7 +12,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./add-related-account.component.scss'],
 })
 export class AddRelatedAccountComponent implements OnInit {
-  private relatedAccForm: FormGroup;
+  public relatedAccForm: FormGroup;
   tokenRegExp = new RegExp(TOKEN_REGEXP);
   idRegExp = new RegExp(CR_ID_REGEXP);
 
