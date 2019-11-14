@@ -12,8 +12,6 @@ import {Storage} from '@ionic/storage'
 })
 export class FCMService {
 
-
-
   constructor(private firebaseNative: FirebaseX, private afs: AngularFirestore, private platform: Platform, private storage:Storage) { }
 
   async getToken() {

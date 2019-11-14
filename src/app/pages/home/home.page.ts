@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { UserService } from '../../services/user-service/user.service';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
-import {FCMService} from '../../services/fcm-service/fcm.service'
-import {tap} from 'rxjs/operators'
+import { FCMService } from '../../services/fcm-service/fcm.service'
+import { tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-home',
@@ -23,16 +23,16 @@ export class HomePage implements OnInit {
     this.notificationsCollection = this.afs.collection(`notifications`)
 
     this.fcm.getToken();
-  
 
     this.fcm.listenToNotifications().pipe(
       tap(msg => {
         // show a toast
-        console.log(msg.body)
+
+        alert(msg.body)
       })
     )
-    .subscribe()
-  
+      .subscribe()
+
   }
 
 
@@ -62,9 +62,8 @@ export class HomePage implements OnInit {
     this.storage.get('user_roles').then(roles => {
       this.getLinkedAccounts(this.currentuserInfo.user_id, roles.user_role.role_id).then((relatedAccounts: any) => {
         relatedAccounts.forEach(relatedAcc => {
-          this.postNotification(this.currentuserInfo.user_id,this.currentuserInfo.name, relatedAcc.id)
+          this.postNotification(this.currentuserInfo.user_id, this.currentuserInfo.name, relatedAcc.id)
         });
-        
       })
     });
   }
