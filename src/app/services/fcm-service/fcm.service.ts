@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FirebaseX } from '@ionic-native/firebase-x/ngx';
 import { Platform } from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/firestore'
+import {Storage} from '@ionic/storage'
 
 
 
@@ -13,7 +14,7 @@ export class FCMService {
 
 
 
-  constructor(private firebaseNative: FirebaseX, private afs: AngularFirestore, private platform: Platform) { }
+  constructor(private firebaseNative: FirebaseX, private afs: AngularFirestore, private platform: Platform, private storage:Storage) { }
 
   async getToken() {
     let token;
@@ -40,13 +41,15 @@ export class FCMService {
     if(!token) return;
     const devicesRef = this.afs.collection('devices');
 
-    const docData ={
-      token: token,
-      userId: 'testUser'
-
-    }
-
-    return devicesRef.doc(token).set(docData)
+    this.storage.get('current-user-id').then(userId => {
+      const docData ={
+        token: token,
+        userId: userId
+      }
+      
+      return devicesRef.doc(token).set(docData)
+    })
+    
   }
 
   listenToNotifications = () => {

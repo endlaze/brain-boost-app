@@ -24,6 +24,7 @@ import { environment } from '../environments/environment'
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation/ngx';
 import { AddRelatedAccountComponent} from './components/add-related-account/add-related-account.component'
 import { FCMService } from './services/fcm-service/fcm.service'
+import {FirebaseX} from '@ionic-native/firebase-x/ngx'
 
 @NgModule({
   declarations: [AppComponent, AddRelatedAccountComponent],
@@ -51,7 +52,8 @@ import { FCMService } from './services/fcm-service/fcm.service'
     StockRolesService,
     AuthGuard,
     BackgroundGeolocation,
-    FCMService
+    FCMService,
+    FirebaseX
   ],
   bootstrap: [AppComponent]
 })

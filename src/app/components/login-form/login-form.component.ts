@@ -88,6 +88,7 @@ export class LoginFormComponent implements OnInit {
 
   getUserRoles = (id) => {
     this.userService.getRoles({ user_id: id }).subscribe((res: any) => {
+      console.log(res.response)
       this.storage.set('user_roles', res.response);
     }, err => { console.log(err) });
   }
