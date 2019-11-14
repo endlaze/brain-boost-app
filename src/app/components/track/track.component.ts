@@ -50,18 +50,19 @@ export class TrackComponent implements OnInit {watch: any;
       this.user = user_id;
       this.locationsCollection = this.afs.collection(
         `locations/${this.user}/track`,
-        ref => ref.orderBy('timestamp')
+        ref => ref.orderBy('timestamp', 'desc').limit(1)
       )
+      this.locations = this.locationsCollection.valueChanges();
+
+      this.locations.subscribe(locations => {
+        this.currentLocation = locations[0]
+        this.lat = parseFloat(this.currentLocation.lat)
+        this.lng = parseFloat(this.currentLocation.lng)
+        this.onPositionChange();
+      })
     })
 
-    this.locations = this.locationsCollection.valueChanges();
-
-    this.locations.subscribe(locations => {
-      this.currentLocation = locations[0]
-      this.lat = this.currentLocation.lat
-      this.lng = this.currentLocation.lng
-      this.onPositionChange();
-    })
+    
 
   }
 
