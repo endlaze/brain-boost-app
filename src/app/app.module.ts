@@ -23,6 +23,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth'
 import { environment } from '../environments/environment'
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation/ngx';
 import { AddRelatedAccountComponent} from './components/add-related-account/add-related-account.component'
+import { FCMService } from './services/fcm-service/fcm.service'
 
 @NgModule({
   declarations: [AppComponent, AddRelatedAccountComponent],
@@ -49,7 +50,8 @@ import { AddRelatedAccountComponent} from './components/add-related-account/add-
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StockRolesService,
     AuthGuard,
-    BackgroundGeolocation
+    BackgroundGeolocation,
+    FCMService
   ],
   bootstrap: [AppComponent]
 })
