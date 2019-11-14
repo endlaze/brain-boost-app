@@ -3,6 +3,7 @@ import { AddReminderComponent } from '../../components/add-reminder/add-reminder
 import { ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage'
 
+
 @Component({
   selector: 'app-reminders',
   templateUrl: './reminders.page.html',
@@ -16,11 +17,16 @@ export class RemindersPage implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   openReminderModal = () => {
     const modal = this.modalController.create({
       component: AddReminderComponent,
+      componentProps: {
+        "foo": 'lalala',
+        "bar": "Test Title"
+      },
       cssClass: 'reminders-modal'
     }).then(modal => {
       modal.present();

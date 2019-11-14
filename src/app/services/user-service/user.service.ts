@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment';
 export class UserService {
   private stockTypesUrl = environment.apiUrl + '/api/app_user'
   private personalInformationURL = environment.apiUrl + '/api/personalData'
+  private remindersURL = environment.apiUrl + '/Reminder'
 
   constructor(private http: HttpClient) { }
 
@@ -34,5 +35,21 @@ export class UserService {
 
   public getLinkedAccounts = (linkReq) => {
     return this.http.post(this.stockTypesUrl + '/get_rel_acc', linkReq)
+  }
+
+  public createReminder = (user) => {
+    return this.http.post(this.remindersURL + '/create', user)
+  }
+
+  public editReminder = (id) => {
+    return this.http.post(this.remindersURL + '/edit', id)
+  }
+
+  public getReminders = (id) => {
+    return this.http.post(this.remindersURL + '/each', id)
+  }
+
+  public deleteReminder = (id) => {
+    return this.http.post(this.remindersURL + '/delete', id)
   }
 }
