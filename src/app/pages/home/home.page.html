@@ -28,9 +28,8 @@
     <ion-card>
       <ion-item>
         <ion-icon name="pin" slot="start"></ion-icon>
-        <ion-button color="danger" slot="end">Estoy perdido</ion-button>
+        <ion-button color="danger" slot="end" (click)="notifyPeople()">Estoy perdido</ion-button>
       </ion-item>
-
       <ion-card-content class="map-wrapper">
         <app-map></app-map>
       </ion-card-content>
