@@ -22,12 +22,14 @@ import { Storage } from '@ionic/storage';
 })
 export class TrackComponent implements OnInit {watch: any;
   map: GoogleMap;
-  lat = 0.0;
-  lng = 0.0;
+  lat:any;
+  lng:any;
   locations: Observable<any>;
   locationsCollection: AngularFirestoreCollection<any>;
   user:any;
   timestamp:any;
+  currentLocation:any;
+  userToTrack:any;
 
   constructor(
     private platform: Platform,
@@ -35,7 +37,6 @@ export class TrackComponent implements OnInit {watch: any;
     private afs: AngularFirestore,
     private storage: Storage
     ) {
-    this.annonLogin();
   }
 
   async ngOnInit() {
@@ -45,33 +46,35 @@ export class TrackComponent implements OnInit {watch: any;
   }
 
   annonLogin = () => {
-    this.afAuth.auth.signInAnonymously().then(() => {
-      this.storage.get('current-user-id').then((user_id) => {
-        this.user = user_id;
-        this.locationsCollection = this.afs.collection(
-          `locations/${this.user}/track`,
-          ref => ref.orderBy('timestamp')
-        )
-      })
+    this.storage.get('tracking_user').then((user_id) => {
+      this.user = user_id;
+      this.locationsCollection = this.afs.collection(
+        `locations/${this.user}/track`,
+        ref => ref.orderBy('timestamp')
+      )
     })
+
+    this.locations = this.locationsCollection.valueChanges();
+
+    this.locations.subscribe(locations => {
+      this.currentLocation = locations[0]
+      this.lat = this.currentLocation.lat
+      this.lng = this.currentLocation.lng
+      this.onPositionChange();
+    })
+
+  }
+
+  setUserToTrack = () => {
+    this.annonLogin();
   }
 
 
 
   onPositionChange = () => {
     this.placeMarker();
-    this.postPosition();
   }
 
-  postPosition = () => {
-    this.locationsCollection.add(
-      {
-        lat: this.lat,
-        lng: this.lng,
-        timestamp: this.timestamp
-      }
-    );
-  }
 
   placeMarker = () => {
     this.map.clear().then(() => {
@@ -81,7 +84,7 @@ export class TrackComponent implements OnInit {watch: any;
         tilt: 60,
       }).then(() => {
         let marker: Marker = this.map.addMarkerSync({
-          title: 'Posicion actual',
+          title: 'Ultima posicion registrada',
           icon: 'blue',
           position: {
             lat: this.lat,
