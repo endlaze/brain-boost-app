@@ -17,14 +17,9 @@ import {
   BackgroundGeolocationEvents,
   BackgroundGeolocationResponse,
 } from '@ionic-native/background-geolocation/ngx';
-
-import {
-  BackgroundGeolocationProvider,
-  BackgroundGeolocationAccuracy
-} from '@ionic-native/background-geolocation/ngx';
-
-
-
+import { Observable } from 'rxjs';
+import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -34,9 +29,19 @@ export class MapComponent implements OnInit {
   watch: any;
   map: GoogleMap;
   lat = 0.0;
-  long = 0.0;
+  lng = 0.0;
+  locations: Observable<any>;
+  locationsCollection: AngularFirestoreCollection<any>;
+  user:any;
+  timestamp:any;
 
-  constructor(private platform: Platform, private afAuth: AngularFireAuth, private backgroundGeolocation: BackgroundGeolocation) {
+  constructor(
+    private platform: Platform,
+    private afAuth: AngularFireAuth,
+    private backgroundGeolocation: BackgroundGeolocation,
+    private afs: AngularFirestore,
+    private storage: Storage
+    ) {
     this.annonLogin();
   }
 
@@ -47,8 +52,14 @@ export class MapComponent implements OnInit {
   }
 
   annonLogin = () => {
-    this.afAuth.auth.signInAnonymously().then(user => {
-      alert(JSON.stringify(user.user));
+    this.afAuth.auth.signInAnonymously().then(() => {
+      this.storage.get('current-user-id').then((user_id) => {
+        this.user = user_id;
+        this.locationsCollection = this.afs.collection(
+          `locations/${this.user}/track`,
+          ref => ref.orderBy('timestamp')
+        )
+      })
     })
   }
 
@@ -66,24 +77,38 @@ export class MapComponent implements OnInit {
     };
     this.backgroundGeolocation.configure(config)
       .then(() => {
-
         this.backgroundGeolocation.on(BackgroundGeolocationEvents.location).subscribe((location: BackgroundGeolocationResponse) => {
+          this.timestamp = location.time;
           this.lat = location.latitude;
-          this.long = location.longitude;
+          this.lng = location.longitude;
           this.onPositionChange();
           this.backgroundGeolocation.finish(); // FOR IOS ONLY
         });
 
       });
-    // start recording location
     this.backgroundGeolocation.start();
   }
 
 
   onPositionChange = () => {
+    this.placeMarker();
+    this.postPosition();
+  }
+
+  postPosition = () => {
+    this.locationsCollection.add(
+      {
+        lat: this.lat,
+        lng: this.lng,
+        timestamp: this.timestamp
+      }
+    );
+  }
+
+  placeMarker = () => {
     this.map.clear().then(() => {
       this.map.moveCamera({
-        target: { lat: this.lat, lng: this.long },
+        target: { lat: this.lat, lng: this.lng },
         zoom: 17,
         tilt: 60,
       }).then(() => {
@@ -92,7 +117,7 @@ export class MapComponent implements OnInit {
           icon: 'blue',
           position: {
             lat: this.lat,
-            lng: this.long
+            lng: this.lng
           }
         });
       });
@@ -111,10 +136,9 @@ export class MapComponent implements OnInit {
       camera: {
         target: {
           lat: this.lat,
-          lng: this.long,
+          lng: this.lng,
         },
-        zoom: 18,
-        tilt: 30
+        zoom: 18
       }
     };
 
