@@ -22,10 +22,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore'
 import { AngularFireAuthModule } from '@angular/fire/auth'
 import { environment } from '../environments/environment'
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation/ngx';
+import { AddRelatedAccountComponent} from './components/add-related-account/add-related-account.component'
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [AddReminderComponent],
+  declarations: [AppComponent, AddRelatedAccountComponent],
+  entryComponents: [AddReminderComponent, AddRelatedAccountComponent],
   imports: [
     LockerModule,
     BrowserModule,
