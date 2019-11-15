@@ -22,6 +22,8 @@ export class AddAppComponent implements OnInit {
       app_appPrice: this.appPrice,
       app_appDesc: this.appDesc
     }
+    console.log(app)
+    
     this.storage.get('apps').then((apps: any) => {
       console.log(apps)
       apps.push(app);

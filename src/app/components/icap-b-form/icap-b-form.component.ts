@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { StockRolesService } from '../../services/stock-roles/stock-roles.service';
-import { UserService } from '../../services/user-service/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,10 +26,9 @@ export class ICAPBFormComponent implements OnInit {
   epilepsiaBool = false
   otroBool = false
 
-  constructor(private route: Router, private formBuilder: FormBuilder, private stockRolesService: StockRolesService, private userService: UserService) {
+  constructor(private route: Router, private formBuilder: FormBuilder) {
     this.icapBForm = this.formBuilder.group({
       //Checkboxes
-      
       noCB: [false],
       autismoCB: [false],
       visualCB: [false],
@@ -328,12 +325,12 @@ export class ICAPBFormComponent implements OnInit {
     })*/
   }
 
-  getUserInformation = (id) => {
+  /*getUserInformation = (id) => {
     this.userService.getNames({ id: id }).subscribe((res: any) => {
       let { name, first_last_name, second_last_name } = res
       this.icapBForm.patchValue({name: name, first_last_name: first_last_name, second_last_name: second_last_name})
     })
-  }
+  }*/
 
   navigateToOtherPage = (ruta) => {
     this.createICAPB()

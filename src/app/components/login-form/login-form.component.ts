@@ -60,6 +60,7 @@ export class LoginFormComponent implements OnInit {
         rem_date: "2021-10-17T21:59:51.551-06:00",
         rem_time: "2019-10-17T00:30:51.552-06:00"
       }]);
+      this.storage.set('apps', [])
       this.router.navigate(['/home']);
     }
     this.toastHandler(res.status, res.message);
