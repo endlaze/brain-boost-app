@@ -23,6 +23,7 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RelatedAccountsPage, RelatedAccountsListComponent, TrackComponent]
+  declarations: [RelatedAccountsPage, RelatedAccountsListComponent, TrackComponent],
+  entryComponents: [TrackComponent],
 })
 export class RelatedAccountsPageModule { }

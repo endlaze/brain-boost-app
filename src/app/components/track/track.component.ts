@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@ionic/angular'
+import { Platform, ModalController } from '@ionic/angular'
 import {
   GoogleMaps,
   GoogleMap,
@@ -35,13 +35,15 @@ export class TrackComponent implements OnInit {watch: any;
     private platform: Platform,
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    private storage: Storage
+    private storage: Storage,
+    public modalController: ModalController
     ) {
   }
 
   ngOnInit() {
     this.platform.ready().then(() => {
       this.loadMap();
+      this.annonLogin();
     }).catch((err)=>{
       alert(JSON.stringify(err))
     });
@@ -66,15 +68,7 @@ export class TrackComponent implements OnInit {watch: any;
       })
     })
 
-    
-
   }
-
-  setUserToTrack = () => {
-    this.annonLogin();
-  }
-
-
 
   onPositionChange = () => {
     this.placeMarker();
@@ -119,12 +113,12 @@ export class TrackComponent implements OnInit {watch: any;
     };
 
     this.map = GoogleMaps.create('track_canvas', mapOptions);
-    this.map.one(GoogleMapsEvent.MAP_READY).then(this.onMapReady.bind(this)).catch((error)=>{
-      alert(JSON.stringify(error))
-    });
+    
+  }
 
+  closeModal = () => {
+    this.modalController.dismiss()
   }
-  onMapReady = () => {
-    alert("Mapa listo")
-  }
+
+
 }
