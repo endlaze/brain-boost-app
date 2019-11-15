@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Storage } from '@ionic/storage';
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-related-accounts',
   templateUrl: './related-accounts.page.html',
   styleUrls: ['./related-accounts.page.scss'],
 })
 export class RelatedAccountsPage implements OnInit {
+  userToTrack:any
 
-  constructor() { }
+  constructor(public modalController: ModalController, private storage: Storage) { }
 
   ngOnInit() {
   }
+
+
 
 }
