@@ -4,6 +4,7 @@ import { AddRelatedAccountComponent } from '../add-related-account/add-related-a
 import { ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage'
 import { UserService } from '../../services/user-service/user.service'
+import { TrackComponent } from '../track/track.component'
 
 
 @Component({
@@ -82,9 +83,19 @@ export class RelatedAccountsListComponent implements OnInit {
     });
     return Promise.all(rolesToAdd);
   }
+
   
   selectUserToTrack = (id) => {
-    this.storage.set('tracking_user', id);
+    this.storage.set('tracking_user', id).then(() => {
+      const modal = this.modalController.create({
+        component: TrackComponent,
+      }).then(modal => {
+        modal.present();
+        modal.onDidDismiss()
+          .then(() => {
+          });
+      });
+    });
   }
 }
 
