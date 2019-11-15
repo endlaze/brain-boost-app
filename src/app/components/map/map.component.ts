@@ -74,7 +74,7 @@ export class MapComponent implements OnInit, OnDestroy {
       desiredAccuracy: 0,
       stationaryRadius: 1,
       distanceFilter: 2,
-      debug: false, //  enable this hear sounds for background-geolocation life-cycle.
+      debug: true, //  enable this hear sounds for background-geolocation life-cycle.
       stopOnTerminate: true, // enable this to clear background location settings when the app terminates
       interval: 2000,
       fastestInterval: 5000,
