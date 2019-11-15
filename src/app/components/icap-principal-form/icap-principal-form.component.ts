@@ -17,7 +17,6 @@ export class ICAPPrincipalFormComponent implements OnInit {
   birthDate;
   evaluationDate;
   selectedDate;
-  count = 0;
 
   constructor(private route: Router, private formBuilder: FormBuilder, private stockRolesService: StockRolesService, private userService: UserService) {
     this.icapPrincipalForm = this.formBuilder.group({
@@ -52,31 +51,21 @@ export class ICAPPrincipalFormComponent implements OnInit {
 
   get form() { return this.icapPrincipalForm.controls; }
 
-  incCount() {
-    this.count++;
-  }
-
   onEvaluationDateChange(date) {
     this.evaluationDate = date.detail.value
-    this.incCount();
   }
 
   onBirthDateChange(date) {
     this.birthDate = date.detail.value
-    this.incCount();
   }
 
-  createICAPForm():boolean{
+  createICAPForm(){
     let userData = this.icapPrincipalForm.getRawValue()
 
     userData['birthday'] = this.birthDate
     userData['evaluationDay'] = this.evaluationDate
 
     console.log(userData)
-    console.log(this.count);
-
-    if (this.count >= 21) { return true }
-    else { return false }
   }
 
   getUserInformation = (id) => {
@@ -87,7 +76,8 @@ export class ICAPPrincipalFormComponent implements OnInit {
   }
 
   navigateToOtherPage = (ruta) => {
-    if (this.createICAPForm()) { this.route.navigate([ruta]); }
+    this.createICAPForm()
+    this.route.navigate([ruta]); 
   }
   
 }

@@ -21,6 +21,7 @@ export class AddReminderComponent implements OnInit {
     this.storage.get('reminder-count').then(count => {
       this.reminderCount = count;
     });
+
   }
 
   saveReminder = () => {
@@ -36,7 +37,6 @@ export class AddReminderComponent implements OnInit {
     console.log(reminder)
 
     this.storage.set('reminder-count', this.reminderCount);
-    
     this.storage.get('reminders').then((reminders: any) => {
       reminders.push(reminder);
       this.storage.set('reminders', reminders);

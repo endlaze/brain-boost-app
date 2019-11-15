@@ -27,4 +27,20 @@ export class UserService {
   public getInfo = (id) => {
     return this.http.post(this.stockTypesUrl + '/get_info', id)
   }
+
+  public linkAccount = (linkReq) => {
+    return this.http.post(this.stockTypesUrl + '/link_acc', linkReq)
+  }
+
+  public getLinkedAccounts = (linkReq) => {
+    return this.http.post(this.stockTypesUrl + '/get_rel_acc', linkReq)
+  }
+
+  public getEmail = (id) => {
+    return this.http.post('http://localhost:3000/api/app_user' + '/get_email', id)
+  }
+
+  public SendHtml = (params) =>{
+    return this.http.post('http://localhost:3000/api/app_user' + '/send_html', params)
+  }
 }

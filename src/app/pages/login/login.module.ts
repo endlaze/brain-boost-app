@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { LoginPage } from './login.page';
-import { LoginFormComponent } from '../../components/login-form/login-form.component';
+import { LoginFormComponent } from '../../components/login-form/login-form.component'
 import { RecoverPasswordComponent } from '../../components/recover-password/recover-password.component';
 import { IonicStorageModule } from '@ionic/storage';
 const routes: Routes = [
