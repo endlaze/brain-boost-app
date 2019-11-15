@@ -1,0 +1,101 @@
+<form [formGroup]="icapFForm" (ngSubmit)="createUser()">
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Residencia actual</ion-card-subtitle>
+    </ion-card-header>
+    <ion-radio-group [formGroup]="icapFForm">
+      <ion-item>
+        <ion-label>Con padres o familiares</ion-label>
+        <ion-radio value="1" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Padres adoptivos o familia sustituta</ion-label>
+        <ion-radio value="2" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Independiente en su casa</ion-label>
+        <ion-radio value="3" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Semi independiente con supervisión regular </ion-label>
+        <ion-radio value="4" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Albergue</ion-label>
+        <ion-radio value="5" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Otro</ion-label>
+        <ion-input type="text" placeholder="Especifique"></ion-input>
+        <ion-radio value="6" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>No se recomienda ningún cambio</ion-label>
+        <ion-radio value="7" ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-card>
+
+
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Recomendación de cambio dentro de los dos años siguientes</ion-card-subtitle>
+    </ion-card-header>
+    <ion-radio-group [formGroup]="icapFForm">
+      <ion-item>
+        <ion-label>Con padres o familiares</ion-label>
+        <ion-radio value="1" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Padres adoptivos o familia sustituta</ion-label>
+        <ion-radio value="2" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Independiente en su casa</ion-label>
+        <ion-radio value="3" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Semi independiente con supervisión regular </ion-label>
+        <ion-radio value="4" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Albergue</ion-label>
+        <ion-radio value="5" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Otro</ion-label>
+        <ion-input type="text" placeholder="Especifique"></ion-input>
+        <ion-radio value="6" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>No se recomienda ningún cambio</ion-label>
+        <ion-radio value="7" ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-card>
+
+  
+ 
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light"> Comentarios </ion-card-subtitle>
+      </ion-card-header>
+      <ion-item>
+          <ion-textarea></ion-textarea>
+      </ion-item>
+  </ion-card>
+
+  <ion-footer>
+      <ion-grid class="no-padding-bot">
+        <ion-row class="no-padding-bot ">
+          <ion-col class="no-padding-bot ">
+            <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-e')">Anterior</ion-button>
+          </ion-col>
+          <ion-col class="no-padding-bot ">
+            <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-c')">Siguiente</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-footer>
+</form>

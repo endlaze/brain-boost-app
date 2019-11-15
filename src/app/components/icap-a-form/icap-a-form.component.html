@@ -1,0 +1,168 @@
+<div class="content" autoscroll="false">
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light"> Sexo </ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group>
+        <ion-item>
+          <ion-label> Masculino</ion-label>
+          <ion-radio></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label> Femenino</ion-label>
+          <ion-radio></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  
+    <ion-item lines="full">
+        <ion-label class="card-label" position="stacked">Estatura</ion-label>
+        <ion-input type="number" placeholder="Solo digite números"></ion-input>
+    </ion-item>
+  
+    <ion-item lines="full">
+        <ion-label class="card-label" position="stacked">Peso</ion-label>
+        <ion-input type="number" placeholder="Solo digite números"></ion-input>
+    </ion-item>
+  
+    <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light"> Idioma que comprende mejor </ion-card-subtitle>
+    </ion-card-header>
+      <ion-radio-group>
+          <ion-item>
+            <ion-label> Español</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Lengua Autótona</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> LESCO</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Otro </ion-label>
+            <ion-input type="text" placeholder="Especifique"></ion-input>
+            <ion-radio></ion-radio>
+          </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  
+      <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light"> Modo principal de expresión </ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group>
+          <ion-item>
+            <ion-label> Ninguno</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Gestos</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Habla</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Lenguaje de signos <br/>gestuales o manuales</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Sistema alternativo <br/>aumentativo de <br/>comunicación</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Otro</ion-label>
+            <ion-input type="text" placeholder="Especifique"></ion-input>
+            <ion-radio></ion-radio>
+          </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  
+      <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light"> Estado civil </ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group>
+          <ion-item>
+            <ion-label> Soltero</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Casado</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Unión libre</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Separado</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Divorciado</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Viudo</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light"> Estado legal </ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group>
+          <ion-item>
+            <ion-label> Adulto</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Su padre, su madre o <br/>un pariente son sus <br/>tutores legales</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Su tutor legal es una <br/>persona que no es<br/>pariente suyo/a</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Su tutor es una <br/>institución pública</ion-label>
+            <ion-radio></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label> Otro</ion-label>
+            <ion-input type="text" placeholder="Especifique"></ion-input>
+            <ion-radio></ion-radio>
+          </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+        <ion-card-header class="blue-component">
+            <ion-card-subtitle color="light"> Comentarios </ion-card-subtitle>
+        </ion-card-header>
+        <ion-item>
+            <ion-textarea></ion-textarea>
+        </ion-item>
+      </ion-card>
+  
+    <ion-footer>
+        <ion-grid class="no-padding-bot">
+          <ion-row class="no-padding-bot ">
+            <ion-col class="no-padding-bot ">
+              <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-form')">Anterior</ion-button>
+            </ion-col>
+            <ion-col class="no-padding-bot ">
+              <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-b')">Siguiente</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+  </div>

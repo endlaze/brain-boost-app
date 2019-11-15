@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Agregar Aplicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="has-header">
+  <div class="spacer" style="height: 250px;"></div>
+  <ion-item>
+      <p style="margin-right: 10px">Título:</p>
+      <ion-input [(ngModel)]="appTitle"></ion-input>
+    </ion-item>
+
+    <div class="spacer" style="height: 20px;"></div>
+
+    <ion-item>
+      <p style="margin-right: 10px">Precio:</p>
+      <ion-input disabled [(ngModel)]="appPrice"></ion-input>
+    </ion-item>
+
+    <div class="spacer" style="height: 20px;"></div>
+  
+    <ion-item>
+      <p style="margin-right: 10px">Descripción:</p>
+      <ion-textarea [(ngModel)]="appDesc"></ion-textarea>
+    </ion-item>
+</ion-content>
+
+<ion-footer>
+    <ion-grid class="no-padding-bot">
+      <ion-row class="no-padding-bot ">
+        <ion-col class="no-padding-bot ">
+          <ion-button expand="block" class="submit-button" color="danger" (click)="closeModal()">Cancelar</ion-button>
+        </ion-col>
+        <ion-col class="no-padding-bot ">
+          <ion-button expand="block" class="submit-button blue-component" (click)="saveApp()">Agregar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>

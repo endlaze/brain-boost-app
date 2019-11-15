@@ -1,0 +1,709 @@
+<form [formGroup]="icapEForm" (ngSubmit)="createUser()">
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Comportamiento autoagresivo o daño a sí mismo</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">Se hace daño en su propio cuerpo.<br/><br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "sí", describa el problema principal.<br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "no", marque nunca (0) para frecuencia <br/>y no es grave (0) para gravedad.<br/><br/></ion-label>
+
+    <ion-item lines="full">
+      <ion-input type="text" formControlName="address" placeholder="Describa el problema"></ion-input>
+    </ion-item>
+    
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Frecuencia: ¿Cuántas veces ocurre esto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. Nunca</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Menos de una vez al mes</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. De una a tres veces al mes</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. De una a seis veces por semana</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. De una a diez veces al día</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>5. Una o más veces en una hora</ion-label>
+          <ion-radio value="5" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Gravedad: ¿Cuál es la gravedad del problema causado por la conducta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. No es grave; no es un problema</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Ligeramente grave; es un problema leve</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Medianamente grave; es un problema moderado</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Muy grave; es un problema grave</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. Extremadamente grave; es un problema crítico</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  </ion-card>
+
+  <!-- 2. HETEROAGRESIVIDAD O DAÑO A OTROS----------------------------------------------->
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Heteroagresividad o daño a otros</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">Causa dolor físico a otras personas o animales.<br/><br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "sí", describa el problema principal.<br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "no", marque nunca (0) para frecuencia <br/>y no es grave (0) para gravedad.<br/><br/></ion-label>
+
+    <ion-item lines="full">
+      <ion-input type="text" formControlName="address" placeholder="Describa el problema"></ion-input>
+    </ion-item>
+    
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Frecuencia: ¿Cuántas veces ocurre esto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. Nunca</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Menos de una vez al mes</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. De una a tres veces al mes</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. De una a seis veces por semana</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. De una a diez veces al día</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>5. Una o más veces en una hora</ion-label>
+          <ion-radio value="5" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Gravedad: ¿Cuál es la gravedad del problema causado por la conducta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. No es grave; no es un problema</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Ligeramente grave; es un problema leve</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Medianamente grave; es un problema moderado</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Muy grave; es un problema grave</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. Extremadamente grave; es un problema crítico</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  </ion-card>
+
+
+  <!-- 3. DESTRUCCIÓN DE OBJETOS----------------------------------------------->
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Destrucción de objetos</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">Intencionalmente rompe, descompone o destruye objetos.<br/><br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "sí", describa el problema principal.<br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "no", marque nunca (0) para frecuencia <br/>y no es grave (0) para gravedad.<br/><br/></ion-label>
+
+    <ion-item lines="full">
+      <ion-input type="text" formControlName="address" placeholder="Describa el problema"></ion-input>
+    </ion-item>
+    
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Frecuencia: ¿Cuántas veces ocurre esto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. Nunca</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Menos de una vez al mes</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. De una a tres veces al mes</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. De una a seis veces por semana</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. De una a diez veces al día</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>5. Una o más veces en una hora</ion-label>
+          <ion-radio value="5" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Gravedad: ¿Cuál es la gravedad del problema causado por la conducta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. No es grave; no es un problema</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Ligeramente grave; es un problema leve</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Medianamente grave; es un problema moderado</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Muy grave; es un problema grave</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. Extremadamente grave; es un problema crítico</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  </ion-card>
+
+
+  <!-- 4. CONDUCTA DISRUPTIVA----------------------------------------------->
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Conducta disruptiva</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">Interfiere en las actividades de otros.<br/><br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "sí", describa el problema principal.<br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "no", marque nunca (0) para frecuencia <br/>y no es grave (0) para gravedad.<br/><br/></ion-label>
+
+    <ion-item lines="full">
+      <ion-input type="text" formControlName="address" placeholder="Describa el problema"></ion-input>
+    </ion-item>
+    
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Frecuencia: ¿Cuántas veces ocurre esto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. Nunca</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Menos de una vez al mes</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. De una a tres veces al mes</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. De una a seis veces por semana</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. De una a diez veces al día</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>5. Una o más veces en una hora</ion-label>
+          <ion-radio value="5" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Gravedad: ¿Cuál es la gravedad del problema causado por la conducta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. No es grave; no es un problema</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Ligeramente grave; es un problema leve</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Medianamente grave; es un problema moderado</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Muy grave; es un problema grave</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. Extremadamente grave; es un problema crítico</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  </ion-card>
+
+
+  <!-- 5. HÁBITOS ATÍPICO Y REPETITIVOS----------------------------------------------->
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Hábitos atípicos y repetitivos</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">Son conductas poco comunes, extrañas, que se repiten una y otra vez.<br/><br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "sí", describa el problema principal.<br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "no", marque nunca (0) para frecuencia <br/>y no es grave (0) para gravedad.<br/><br/></ion-label>
+
+    <ion-item lines="full">
+      <ion-input type="text" formControlName="address" placeholder="Describa el problema"></ion-input>
+    </ion-item>
+    
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Frecuencia: ¿Cuántas veces ocurre esto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. Nunca</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Menos de una vez al mes</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. De una a tres veces al mes</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. De una a seis veces por semana</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. De una a diez veces al día</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>5. Una o más veces en una hora</ion-label>
+          <ion-radio value="5" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Gravedad: ¿Cuál es la gravedad del problema causado por la conducta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. No es grave; no es un problema</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Ligeramente grave; es un problema leve</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Medianamente grave; es un problema moderado</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Muy grave; es un problema grave</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. Extremadamente grave; es un problema crítico</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  </ion-card>
+
+
+  <!-- 6. CONDUCTA SOCIAL OFENSIVA----------------------------------------------->
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Conducta social ofensiva</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">Son conductas que ofenden a otros.<br/><br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "sí", describa el problema principal.<br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "no", marque nunca (0) para frecuencia <br/>y no es grave (0) para gravedad.<br/><br/></ion-label>
+
+    <ion-item lines="full">
+      <ion-input type="text" formControlName="address" placeholder="Describa el problema"></ion-input>
+    </ion-item>
+    
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Frecuencia: ¿Cuántas veces ocurre esto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. Nunca</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Menos de una vez al mes</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. De una a tres veces al mes</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. De una a seis veces por semana</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. De una a diez veces al día</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>5. Una o más veces en una hora</ion-label>
+          <ion-radio value="5" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Gravedad: ¿Cuál es la gravedad del problema causado por la conducta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. No es grave; no es un problema</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Ligeramente grave; es un problema leve</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Medianamente grave; es un problema moderado</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Muy grave; es un problema grave</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. Extremadamente grave; es un problema crítico</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  </ion-card>
+
+  <!-- 7. RETRAIMIENTO O FALTA DE ATENCIÓN----------------------------------------------->
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Retraimiento o falta de atención</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">Son problemas de falta de relación con otros o de no prestar atención.<br/><br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "sí", describa el problema principal.<br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "no", marque nunca (0) para frecuencia <br/>y no es grave (0) para gravedad.<br/><br/></ion-label>
+
+    <ion-item lines="full">
+      <ion-input type="text" formControlName="address" placeholder="Describa el problema"></ion-input>
+    </ion-item>
+    
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Frecuencia: ¿Cuántas veces ocurre esto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. Nunca</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Menos de una vez al mes</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. De una a tres veces al mes</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. De una a seis veces por semana</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. De una a diez veces al día</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>5. Una o más veces en una hora</ion-label>
+          <ion-radio value="5" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Gravedad: ¿Cuál es la gravedad del problema causado por la conducta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. No es grave; no es un problema</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Ligeramente grave; es un problema leve</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Medianamente grave; es un problema moderado</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Muy grave; es un problema grave</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. Extremadamente grave; es un problema crítico</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  </ion-card>
+
+
+  <!-- 8. CONDUCTAS NO COLABORADORAS----------------------------------------------->
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Conductas no colaboradoras</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">Son conductas en las que la persona no colabora.<br/><br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "sí", describa el problema principal.<br/></ion-label>
+    <ion-label class="card-label" position="stacked">Si la respuesta es "no", marque nunca (0) para frecuencia <br/>y no es grave (0) para gravedad.<br/><br/></ion-label>
+
+    <ion-item lines="full">
+      <ion-input type="text" formControlName="address" placeholder="Describa el problema"></ion-input>
+    </ion-item>
+    
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Frecuencia: ¿Cuántas veces ocurre esto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. Nunca</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Menos de una vez al mes</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. De una a tres veces al mes</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. De una a seis veces por semana</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. De una a diez veces al día</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>5. Una o más veces en una hora</ion-label>
+          <ion-radio value="5" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light" style="text-align:center">Gravedad: ¿Cuál es la gravedad del problema causado por la conducta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapEForm">
+        <ion-item>
+          <ion-label>0. No es grave; no es un problema</ion-label>
+          <ion-radio value="0" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>1. Ligeramente grave; es un problema leve</ion-label>
+          <ion-radio value="1" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Medianamente grave; es un problema moderado</ion-label>
+          <ion-radio value="2" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Muy grave; es un problema grave</ion-label>
+          <ion-radio value="3" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>4. Extremadamente grave; es un problema crítico</ion-label>
+          <ion-radio value="4" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  </ion-card>
+
+
+  <!-- 9. REACCIÓN A LA CONDUCTA PROBLEMA EN CUALQUIER CATEGORÍA----------------------------------------------->
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Reacción a la conducta problema en cualquier categoría</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-label class="card-label" position="stacked">¿Cómo reacciona habitualmente usted u otras personas ante los problemas de conducta de la persona evaluada?<br/><br/></ion-label>
+    <ion-radio-group [formGroup]="icapEForm">
+      <ion-item>
+        <ion-label>0. No hay problemas de conducta</ion-label>
+        <ion-radio value="0" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>1. No hacen nada o le consuelan</ion-label>
+        <ion-radio value="1" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>2. Le piden que abandone la conducta, <br/>razonando con él o ella</ion-label>
+        <ion-radio value="2" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>3. Deliberadamente ignoran esta(s) conducta(s) <br/>reforzando otras más positivas</ion-label>
+        <ion-radio value="3" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>4. Le piden a la persona que se disculpe <br/>o corrija la situación</ion-label>
+        <ion-radio value="4" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>5. Modifican o reestructuran el entorno,<br/> cambian de materiales</ion-label>
+        <ion-radio value="5" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>6. Piden que la persona salga de la habitación o <br/>del aula(etc), o que se siente en otro lugar</ion-label>
+        <ion-radio value="6" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>7. Le retiran ciertos privilegios obtenidos anteriormente</ion-label>
+        <ion-radio value="7" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>8. Le dirigen de manera física, le trasladan o<br/> le ponen límites físicamente</ion-label>
+        <ion-radio value="8" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>9. Se necesita ayuda para controlarle, <br/>son precisas 2 o más personas para ello</ion-label>
+        <ion-radio value="9" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>10. Otros</ion-label>
+        <ion-input type="text" placeholder="Especifique"></ion-input>
+        <ion-radio value="10" ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-card>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light"> Comentarios </ion-card-subtitle>
+      </ion-card-header>
+      <ion-item>
+          <ion-textarea></ion-textarea>
+      </ion-item>
+  </ion-card>
+
+  <ion-footer>
+      <ion-grid class="no-padding-bot">
+        <ion-row class="no-padding-bot ">
+          <ion-col class="no-padding-bot ">
+            <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-d')">Anterior</ion-button>
+          </ion-col>
+          <ion-col class="no-padding-bot ">
+            <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-f')">Siguiente</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-footer>
+</form>

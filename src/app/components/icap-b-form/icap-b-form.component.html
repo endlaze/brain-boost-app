@@ -1,0 +1,190 @@
+<form [formGroup]="icapBForm" (ngSubmit)="createUser()">
+    <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light">Diagnóstico Principal</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapBForm" (ionChange)="onItemChange($event)">
+        <ion-item>
+          <ion-label>Ninguno</ion-label>
+          <ion-radio value="no" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Trastornos del Espectro del Autismo</ion-label>
+          <ion-radio value="autismo" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Discapacidad visual</ion-label>
+          <ion-radio value="visual" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Discapacidad auditiva</ion-label>
+          <ion-radio value="auditiva" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Sordo Ceguera</ion-label>
+          <ion-radio value="sordo_ceguera" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Parálisis cerebral</ion-label>
+          <ion-radio value="paralisis_cerebral" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Trastorno intelectual</ion-label>
+          <ion-radio value="trastorno_intelectual" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Lesión cerebral o neurológica</ion-label>
+          <ion-radio value="lesion_cerebral" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Farmacodependencia</ion-label>
+          <ion-radio value="farmacodependencia" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Problemas de salud física</ion-label>
+          <ion-radio value="salud_fisica" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Enfermedad mental</ion-label>
+          <ion-radio value="enfermedad_mental" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Problema de salud mental <br/> situacional o episódico</ion-label>
+          <ion-radio value="salud_mental" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Epilepsia o convulsiones</ion-label>
+          <ion-radio value="epilepsia" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Otro: Retraso en el desarrollo psicomotor</ion-label>
+          <ion-radio value="otro" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
+  
+    <ion-card class="card-section">
+        <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light">Otros Diagnósticos</ion-card-subtitle>
+        </ion-card-header>
+        <ion-list [formGroup]="icapBForm">
+          <ion-item>
+            <ion-label>Ninguno</ion-label>
+            <ion-checkbox slot="end" value="no" formControlName="noCB"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Trastornos del Espectro del Autismo</ion-label>
+            <ion-checkbox slot="end" value="autismo" formControlName="autismoCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!autismoBool">
+            <ion-input type="text" formControlName="autismo" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Discapacidad visual</ion-label>
+            <ion-checkbox slot="end" value="visual" formControlName="visualCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!visualBool">
+            <ion-input type="text" formControlName="visual" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Discapacidad auditiva</ion-label>
+            <ion-checkbox slot="end" value="auditiva" formControlName="auditivaCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!auditivaBool">
+            <ion-input type="text" formControlName="auditiva" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sordo Ceguera</ion-label>
+            <ion-checkbox slot="end" value="sordo_ceguera" formControlName="sordo_cegueraCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!sordo_cegueraBool">
+            <ion-input type="text" formControlName="sordo_ceguera" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Parálisis cerebral</ion-label>
+            <ion-checkbox slot="end" value="paralisis_cerebral" formControlName="paralisis_cerebralCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!paralisis_cerebralBool">
+            <ion-input type="text" formControlName="paralisis_cerebral" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Trastorno intelectual</ion-label>
+            <ion-checkbox slot="end" value="trastorno_intelectual" formControlName="trastorno_intelectualCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!trastorno_intelectualBool">
+            <ion-input type="text" formControlName="trastorno_intelectual" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Lesión cerebral o neurológica</ion-label>
+            <ion-checkbox slot="end" value="lesion_cerebral" formControlName="lesion_cerebralCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!lesion_cerebralBool">
+            <ion-input type="text" formControlName="lesion_cerebral" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Farmacodependencia</ion-label>
+            <ion-checkbox slot="end" value="farmacodependencia" formControlName="farmacodependenciaCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!farmacodependenciaBool">
+            <ion-input type="text" formControlName="farmacodependencia" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Problemas de salud física</ion-label>
+            <ion-checkbox slot="end" value="salud_fisica" formControlName="salud_fisicaCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!salud_fisicaBool">
+            <ion-input type="text" formControlName="salud_fisica" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Enfermedad mental</ion-label>
+            <ion-checkbox slot="end" value="enfermedad_mental" formControlName="enfermedad_mentalCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!enfermedad_mentalBool">
+            <ion-input type="text" formControlName="enfermedad_mental" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Problema de salud mental <br/> situacional o episódico</ion-label>
+            <ion-checkbox slot="end" value="salud_mental" formControlName="salud_mentalCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!salud_mentalBool">
+            <ion-input type="text" formControlName="salud_mental" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Epilepsia o convulsiones</ion-label>
+            <ion-checkbox slot="end" value="epilepsia" formControlName="epilepsiaCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!epilepsiaBool">
+            <ion-input type="text" formControlName="epilepsia" placeholder="Especifique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Otro: Retraso en el desarrollo <br/> psicomotor</ion-label>
+            <ion-checkbox slot="end" value="otro" formControlName="otroCB"></ion-checkbox>
+          </ion-item>
+          <ion-item [hidden]="!otroBool">
+            <ion-input type="text" formControlName="otro" placeholder="Especifique"></ion-input>
+          </ion-item>
+        </ion-list>
+    </ion-card>
+   
+    <ion-card class="card-section">
+        <ion-card-header class="blue-component">
+            <ion-card-subtitle color="light"> Comentarios </ion-card-subtitle>
+        </ion-card-header>
+        <ion-item>
+            <ion-textarea formControlName="comment"></ion-textarea>
+        </ion-item>
+    </ion-card>
+  
+    <ion-footer>
+        <ion-grid class="no-padding-bot">
+          <ion-row class="no-padding-bot ">
+            <ion-col class="no-padding-bot ">
+              <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-a')">Anterior</ion-button>
+            </ion-col>
+            <ion-col class="no-padding-bot ">
+              <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-c')">Siguiente</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-footer>
+  </form>

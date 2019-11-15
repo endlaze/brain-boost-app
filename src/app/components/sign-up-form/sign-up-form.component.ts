@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { StockRolesService } from '../../services/stock-roles/stock-roles.service';
 import { UserService } from '../../services/user-service/user.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -21,7 +20,7 @@ export class SignUpFormComponent implements OnInit {
   selectedSubroles = []
   selectedDate;
 
-  constructor(private formBuilder: FormBuilder, private stockRolesService: StockRolesService, private userService: UserService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private stockRolesService: StockRolesService, private userService: UserService) {
     this.signUpForm = this.formBuilder.group({
       id: ['', [Validators.pattern('^[0-9]*$'), Validators.required]],
       name: ['', [Validators.pattern('^[a-zA-Z ]*$'), Validators.required]],
@@ -94,7 +93,6 @@ export class SignUpFormComponent implements OnInit {
 
     this.userService.create(userData).subscribe((res: any) => {
       console.log(res)
-      this.router.navigate(['/home']);
     })
   }
 
@@ -125,8 +123,8 @@ export class SignUpFormComponent implements OnInit {
   getUserInformation = (id) => {
     this.userService.getNames({ id: id }).subscribe((res: any) => {
       let { name, first_last_name, second_last_name } = res
-      this.signUpForm.patchValue({ name: name, first_last_name: first_last_name, second_last_name: second_last_name })
+      this.signUpForm.patchValue({name: name, first_last_name: first_last_name, second_last_name: second_last_name})
     })
   }
-
+  
 }

@@ -1,0 +1,293 @@
+<form [formGroup]="icapCForm" (ngSubmit)="createUser()">
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Trastorno intelectual</ion-card-subtitle>
+    </ion-card-header>
+    <ion-radio-group [formGroup]="icapCForm">
+      <ion-item>
+        <ion-label>No tiene trastorno</ion-label>
+        <ion-radio value="no" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Leve (CL 52-70)</ion-label>
+        <ion-radio value="leve" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Moderado (CL 36-51)</ion-label>
+        <ion-radio value="moderado" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Severo (CL 20-25)</ion-label>
+        <ion-radio value="severo" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Profundo <br/>(CL por debajo de 20)</ion-label>
+        <ion-radio value="profundo" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Riesgo</ion-label>
+        <ion-radio value="riesgo" ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-card>
+
+
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Visión</ion-card-subtitle>
+    </ion-card-header>
+    <ion-radio-group [formGroup]="icapCForm">
+      <ion-item>
+        <ion-label>Visión buena <br/> (con o sin ayudas ópticas)</ion-label>
+        <ion-radio value="vision_buena" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Problemas de visión  <br/>que limitan la  lectura<br/> o movilidad
+          (con o<br/> sin ayudas ópticas)
+        </ion-label>
+        <ion-radio value="vision_regular" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Poca o nula visión <br/>(incluso con ayudas <br/> ópticas y no ópticas)</ion-label>
+        <ion-radio value="vision_mala" ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light">Audición</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapCForm">
+        <ion-item>
+          <ion-label>Puede oír voces normales<br/>(con o sin audífonos)</ion-label>
+          <ion-radio value="audicion_buena" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Puede oír solo voces altas <br/> (con o sin audífonos)
+          </ion-label>
+          <ion-radio value="audicion_regular" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Audición pobre o nula <br/> (incluso con audífonos)</ion-label>
+          <ion-radio value="audicion_mala" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light">Frecuencia de crisis epilépticas</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapCForm">
+        <ion-item>
+          <ion-label>Ninguna o controladas</ion-label>
+          <ion-radio value="epilepsia_ninguna" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Una cada dos o más meses</ion-label>
+          <ion-radio value="epilepsia_dos" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mensualmente</ion-label>
+          <ion-radio value="epilepsia_mensual" ></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Una o más a la semana</ion-label>
+            <ion-radio value="epilepsia_semanal" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light">Salud</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapCForm">
+        <ion-item>
+          <ion-label>No limita sus actividades</ion-label>
+          <ion-radio value="salid_ninguna" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Limita un poco sus <br/> actividades diarias</ion-label>
+          <ion-radio value="salud_poco" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Muchas o significativas <br/>limitaciones en las <br/> actividades diarias</ion-label>
+          <ion-radio value="salud_mucho" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light">Precisa de la atención personal de salud</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapCForm">
+        <ion-item>
+          <ion-label>Menos de una vez al mes</ion-label>
+          <ion-radio value="atencion_menos" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mensualmente</ion-label>
+          <ion-radio value="atencion_mensual" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Semanalmente</ion-label>
+          <ion-radio value="atencion_semanal" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Diariamente</ion-label>
+          <ion-radio value="atencion_diaria" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Necesita tener disponible <br/>atención médica en <br/> cualquier momento, <br/>durante las 24 horas</ion-label>
+          <ion-radio value="atencion_siempre" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light">Medicamentos que toma actualmente</ion-card-subtitle>
+      </ion-card-header>
+      <ion-list [formGroup]="icapCForm">
+        <ion-item>
+          <ion-label>Ninguno</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Para problemas de <br/> salud (física):</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="second_last_name" placeholder="Especifique"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Para problemas <br/> anímicos o <br/>emocionales <br/> (por ejemplo, <br/>ansiedad e insomnio):</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="second_last_name" placeholder="Especifique"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Para epilepsia:</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="second_last_name" placeholder="Especifique"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Otros:</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="second_last_name" placeholder="Especifique"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Desconocidos:</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="second_last_name" placeholder="Especifique"></ion-input>
+        </ion-item>
+      </ion-list>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light">Brazo / Mano</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapCForm">
+        <ion-item>
+          <ion-label>No presenta limitaciones <br/> en las actividades diarias</ion-label>
+          <ion-radio value="brazo_ninguna" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Con algunas limitaciones <br/> en las actividades diarias</ion-label>
+          <ion-radio value="brazo_regular" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Con limitaciones en <br/> la mayoría de las <br/> actividades diarias</ion-label>
+          <ion-radio value="brazo_mal" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light">Movilidad</ion-card-subtitle>
+      </ion-card-header>
+      <ion-radio-group [formGroup]="icapCForm">
+        <ion-item>
+          <ion-label>Camina sin dificultad <br/>sin apoyo</ion-label>
+          <ion-radio value="movilidad_mucha" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Camina con dificultad <br/> o sin apoyo</ion-label>
+          <ion-radio value="movilidad_regular" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Se desplaza en silla de <br/> ruedas o no camina</ion-label>
+          <ion-radio value="movilidad_silla" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Limitado a la cama <br/> durante la mayor <br/> parte del día</ion-label>
+          <ion-radio value="movilidad_poca" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>En cama todo el día</ion-label>
+          <ion-radio value="atencion_nunca" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+        <ion-card-subtitle color="light">Apoyos para su movilidad</ion-card-subtitle>
+      </ion-card-header>
+      <ion-list [formGroup]="icapCForm">
+        <ion-item>
+          <ion-label>Ninguno</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Necesita equipos para <br/>movilidad asistida:</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="second_last_name" placeholder="Especifique"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Necesita apoyo <br/> de otra persona <br/>intermitentemente</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Necesita apoyo <br/> de otra persona <br/>permanentemente</ion-label>
+          <ion-checkbox slot="end" value="atencion_menos" ></ion-checkbox>
+        </ion-item>
+      </ion-list>
+  </ion-card>
+
+  <ion-card class="card-section">
+      <ion-card-header class="blue-component">
+          <ion-card-subtitle color="light"> Comentarios </ion-card-subtitle>
+      </ion-card-header>
+      <ion-item>
+          <ion-textarea></ion-textarea>
+      </ion-item>
+  </ion-card>
+
+  <ion-footer>
+      <ion-grid class="no-padding-bot">
+        <ion-row class="no-padding-bot ">
+          <ion-col class="no-padding-bot ">
+            <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-b')">Anterior</ion-button>
+          </ion-col>
+          <ion-col class="no-padding-bot ">
+            <ion-button expand="block" class="submit-button blue-component" (click)="navigateToOtherPage('/icap-d')">Siguiente</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-footer>
+</form>
