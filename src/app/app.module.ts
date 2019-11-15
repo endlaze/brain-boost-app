@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, RouterModule, Routes } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -12,23 +12,19 @@ import { StockRolesService } from './services/stock-roles/stock-roles.service'
 import { IonicStorageModule } from '@ionic/storage';
 import { AuthGuard } from './guard/auth-guard'
 import { LockerModule } from 'angular-safeguard';
-import {AddReminderComponent} from './components/add-reminder/add-reminder.component'
-import {RemindersPageModule} from './pages/reminders/reminders.module'
-import { GoogleMaps } from '@ionic-native/google-maps/ngx'
+import { AddReminderComponent } from './components/add-reminder/add-reminder.component';
+import { RemindersPageModule } from './pages/reminders/reminders.module';
+import { AddAppComponent } from './components/add-app/add-app.component';
+import { RecommendedAppsPageModule } from './pages/recommended-apps/recommended-apps.module';
+import { LoginPageModule } from './pages/login/login.module';
+import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { GoogleMaps } from '@ionic-native/google-maps/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { HomePageModule } from './pages/home/home.module'
-import { AngularFireModule } from '@angular/fire'
-import { AngularFirestoreModule } from '@angular/fire/firestore'
-import { AngularFireAuthModule } from '@angular/fire/auth'
-import { environment } from '../environments/environment'
-import { BackgroundGeolocation } from '@ionic-native/background-geolocation/ngx';
-import { AddRelatedAccountComponent} from './components/add-related-account/add-related-account.component'
-import { FCMService } from './services/fcm-service/fcm.service'
-import {FirebaseX} from '@ionic-native/firebase-x/ngx'
 
 @NgModule({
-  declarations: [AppComponent, AddRelatedAccountComponent],
-  entryComponents: [AddReminderComponent, AddRelatedAccountComponent],
+  declarations: [AppComponent],
+  entryComponents: [AddReminderComponent, AddAppComponent, RecoverPasswordComponent],
   imports: [
     LockerModule,
     BrowserModule,
@@ -39,10 +35,9 @@ import {FirebaseX} from '@ionic-native/firebase-x/ngx'
     HttpClientModule,
     IonicStorageModule.forRoot(),
     RemindersPageModule,
-    HomePageModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireAuthModule],
+    RecommendedAppsPageModule,
+    LoginPageModule,
+    HomePageModule],
   providers: [
     StatusBar,
     SplashScreen,
@@ -50,10 +45,7 @@ import {FirebaseX} from '@ionic-native/firebase-x/ngx'
     Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StockRolesService,
-    AuthGuard,
-    BackgroundGeolocation,
-    FCMService,
-    FirebaseX
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

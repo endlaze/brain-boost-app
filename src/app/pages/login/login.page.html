@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title class="ion-text-center">Iniciar Sesión</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,7 +24,7 @@
   <app-login-form class="no-margin-bot"></app-login-form>
   <section class="ion-text-center">
     <ion-item lines="none" class="ion-text-center no-margin-top">
-      <ion-label class="blue-label no-margin-top" routerLink="/">¿Has olvidado la contraseña?</ion-label>
+      <ion-label class="blue-label no-margin-top" (click)=openAppModal()>¿Has olvidado la contraseña?</ion-label>
     </ion-item>
   </section>
   <section class="ion-text-center">
