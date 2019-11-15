@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { RelatedAccountsPage } from './related-accounts.page';
 import { SharedModule } from '../../shared.module';
 import { RelatedAccountsListComponent } from '../../components/related-accounts-list/related-accounts-list.component'
+import { TrackComponent } from '../../components/track/track.component'
 
 const routes: Routes = [
   {
@@ -22,6 +23,6 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RelatedAccountsPage, RelatedAccountsListComponent]
+  declarations: [RelatedAccountsPage, RelatedAccountsListComponent, TrackComponent]
 })
 export class RelatedAccountsPageModule { }

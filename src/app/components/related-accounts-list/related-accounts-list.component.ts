@@ -82,6 +82,10 @@ export class RelatedAccountsListComponent implements OnInit {
     });
     return Promise.all(rolesToAdd);
   }
+  
+  selectUserToTrack = (id) => {
+    this.storage.set('tracking_user', id);
+  }
 }
 
 
