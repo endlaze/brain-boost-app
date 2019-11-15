@@ -59,9 +59,9 @@ export class SidemenuComponent implements OnInit {
     },
     {
       title: 'Estadísticas',
-      url: '/stats',
+      url: '/statistics',
       icon: 'stats',
-      disabled: true,
+      disabled: false,
       allowedRoles: [1, 2, 3]
     },
     {
