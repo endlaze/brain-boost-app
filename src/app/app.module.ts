@@ -13,6 +13,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { AuthGuard } from './guard/auth-guard'
 import { LockerModule } from 'angular-safeguard';
 import {AddReminderComponent} from './components/add-reminder/add-reminder.component'
+import {EditReminderComponent} from './components/edit-reminder/edit-reminder.component'
 import {RemindersPageModule} from './pages/reminders/reminders.module'
 import { GoogleMaps } from '@ionic-native/google-maps/ngx'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
@@ -21,7 +22,7 @@ import { AddRelatedAccountComponent} from './components/add-related-account/add-
 
 @NgModule({
   declarations: [AppComponent, AddRelatedAccountComponent],
-  entryComponents: [AddReminderComponent, AddRelatedAccountComponent],
+  entryComponents: [AddReminderComponent, EditReminderComponent,AddRelatedAccountComponent],
   imports: [
     LockerModule,
     BrowserModule,
