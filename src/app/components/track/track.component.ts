@@ -125,6 +125,6 @@ export class TrackComponent implements OnInit {watch: any;
 
   }
   onMapReady = () => {
-    alert("Mapa listo")
+    
   }
 }
