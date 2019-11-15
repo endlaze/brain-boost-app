@@ -114,7 +114,7 @@ export class TrackComponent implements OnInit {watch: any;
       }
     };
 
-    this.map = GoogleMaps.create('map_canvas', mapOptions);
+    this.map = GoogleMaps.create('track_canvas', mapOptions);
 
   }
 }
