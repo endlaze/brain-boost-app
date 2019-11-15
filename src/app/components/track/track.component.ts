@@ -22,8 +22,8 @@ import { Storage } from '@ionic/storage';
 })
 export class TrackComponent implements OnInit {watch: any;
   map: GoogleMap;
-  lat:any;
-  lng:any;
+  lat = 0.0;
+  lng = 0.0;
   locations: Observable<any>;
   locationsCollection: AngularFirestoreCollection<any>;
   user:any;
@@ -39,9 +39,13 @@ export class TrackComponent implements OnInit {watch: any;
     ) {
   }
 
-  async ngOnInit() {
-    await this.platform.ready();
-    await this.loadMap();
+  ngOnInit() {
+    this.platform.ready().then(() => {
+      this.loadMap();
+    }).catch((err)=>{
+      alert(JSON.stringify(err))
+    });
+    
 
   }
 
@@ -115,6 +119,12 @@ export class TrackComponent implements OnInit {watch: any;
     };
 
     this.map = GoogleMaps.create('track_canvas', mapOptions);
+    this.map.one(GoogleMapsEvent.MAP_READY).then(this.onMapReady.bind(this)).catch((error)=>{
+      alert(JSON.stringify(error))
+    });
 
+  }
+  onMapReady = () => {
+    alert("Mapa listo")
   }
 }

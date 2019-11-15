@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Platform } from '@ionic/angular'
 import {
   GoogleMaps,
@@ -25,7 +25,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnDestroy {
   watch: any;
   map: GoogleMap;
   lat = 0.0;
@@ -49,6 +49,11 @@ export class MapComponent implements OnInit {
     await this.platform.ready();
     await this.loadMap();
     this.setUpGeolocation();
+  }
+
+  async ngOnDestroy() {
+    await this.map.destroy();
+    this.map = null;
   }
 
   annonLogin = () => {
